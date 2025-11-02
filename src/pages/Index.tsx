@@ -41,27 +41,7 @@ const Index = () => {
       }
     }
   }, []);
-  const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
-    
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
-    const cardCenterX = rect.left + rect.width / 2;
-    const cardCenterY = rect.top + rect.height / 2;
-    
-    const mouseX = e.clientX - cardCenterX;
-    const mouseY = e.clientY - cardCenterY;
-    
-    const rotateY = (mouseX / (rect.width / 2)) * 15;
-    const rotateX = -(mouseY / (rect.height / 2)) * 15;
-    
-    setRotation({ x: rotateX, y: rotateY });
-  };
-
-  const handleMouseLeave = () => {
-    setRotation({ x: 5, y: -5 });
-  };
-
+ 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Particle Background */}
