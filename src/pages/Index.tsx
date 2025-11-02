@@ -60,11 +60,12 @@ const Index = () => {
     setRotation({ x: 0, y: 0 });
   };
 
-  const avatarImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%236366f1' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='80' fill='white'%3EB%3C/text%3E%3C/svg%3E";
-  const aiResearchImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%234f46e5' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='white'%3EAI Research%3C/text%3E%3C/svg%3E";
-  const portfolioImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%238b5cf6' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='white'%3EPortfolio%3C/text%3E%3C/svg%3E";
-  const aiAssistantImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%2306b6d4' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='white'%3EAI Assistant%3C/text%3E%3C/svg%3E";
 
+  const avatarImg = "https://raw.githubusercontent.com/Baseer-S/Futuristic-Portfolio/main/src/assets/baseer-avatar.jpg";
+  const aiResearchImg = "https://raw.githubusercontent.com/Baseer-S/Futuristic-Portfolio/main/src/assets/ai-research-assistant.png";
+  const portfolioImg = "https://raw.githubusercontent.com/Baseer-S/Futuristic-Portfolio/main/src/assets/portfolio-screenshot.png";
+  const aiAssistantImg = "https://raw.githubusercontent.com/Baseer-S/Futuristic-Portfolio/main/src/assets/ai-assistant.png";
+  
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div id="particles" className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" />
