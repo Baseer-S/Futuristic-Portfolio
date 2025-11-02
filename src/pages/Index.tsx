@@ -1,15 +1,13 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import avatarImg from "@/assets/baseer-avatar.jpg";
-import aiResearchImg from "@/assets/ai-research-assistant.png";
-import portfolioImg from "@/assets/portfolio-screenshot.png";
-import aiAssistantImg from "@/assets/ai-assistant.png";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [rotation, setRotation] = useState({ x: 0, y: 0 });
+  const cardRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +18,6 @@ const Index = () => {
   }, []);
 
   useEffect(() => {
-    // Create particles
     const particlesContainer = document.getElementById("particles");
     if (particlesContainer) {
       for (let i = 0; i < 50; i++) {
@@ -42,13 +39,36 @@ const Index = () => {
     }
   }, []);
 
- 
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    
+    const card = cardRef.current;
+    const rect = card.getBoundingClientRect();
+    const cardCenterX = rect.left + rect.width / 2;
+    const cardCenterY = rect.top + rect.height / 2;
+    
+    const mouseX = e.clientX - cardCenterX;
+    const mouseY = e.clientY - cardCenterY;
+    
+    const rotateY = (mouseX / (rect.width / 2)) * 10;
+    const rotateX = -(mouseY / (rect.height / 2)) * 10;
+    
+    setRotation({ x: rotateX, y: rotateY });
+  };
+
+  const handleMouseLeave = () => {
+    setRotation({ x: 0, y: 0 });
+  };
+
+  const avatarImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect fill='%236366f1' width='200' height='200'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='80' fill='white'%3EB%3C/text%3E%3C/svg%3E";
+  const aiResearchImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%234f46e5' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='white'%3EAI Research%3C/text%3E%3C/svg%3E";
+  const portfolioImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%238b5cf6' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='white'%3EPortfolio%3C/text%3E%3C/svg%3E";
+  const aiAssistantImg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%2306b6d4' width='400' height='300'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='white'%3EAI Assistant%3C/text%3E%3C/svg%3E";
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Particle Background */}
       <div id="particles" className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" />
 
-      {/* Navigation */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${
           isScrolled
@@ -89,8 +109,6 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[20%] left-[10%] text-4xl opacity-30 animate-[float_6s_ease-in-out_infinite]">
@@ -146,10 +164,10 @@ const Index = () => {
               ref={cardRef}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              className="bg-card/80 backdrop-blur-md border border-border/20 rounded-xl p-6 shadow-2xl transition-transform hover:scale-105 duration-300 cursor-pointer"
+              className="bg-card/80 backdrop-blur-md border border-border/20 rounded-xl p-6 shadow-2xl hover:shadow-primary/20 duration-300 cursor-pointer"
               style={{
                 transform: `perspective(1000px) rotateY(${rotation.y}deg) rotateX(${rotation.x}deg)`,
-                transition: 'transform 0.1s ease-out'
+                transition: 'transform 0.2s ease-out'
               }}
             >
               <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border/10">
@@ -207,7 +225,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="py-20 bg-muted/30 rounded-[5%] max-w-4xl mx-8 lg:mx-auto text-center">
         <div className="space-y-6">
           <h2 className="text-4xl font-bold bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text text-transparent">
@@ -244,7 +261,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Skills Section */}
       <section id="skills" className="py-24 bg-muted/30">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
@@ -307,7 +323,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
       <section id="projects" className="py-24">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
@@ -401,7 +416,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="py-24 bg-muted/30">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
@@ -496,7 +510,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-background/90 border-t border-border/10 py-12">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-3 gap-12 mb-8">
