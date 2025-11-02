@@ -149,7 +149,7 @@ const Index = () => {
                 <div className="w-3 h-3 rounded-full bg-green-500" />
                 <span className="ml-4 text-muted-foreground text-sm">Developer.java</span>
               </div>
-              <pre className="font-mono text-sm space-y-2">
+              <pre className="font-mono text-sm space-y-2 overflow-x-auto">
                 <code className="block opacity-0 animate-[fadeInUp_0.6s_ease-out_1.3s_both]">
                   <span className="text-secondary">public class</span>{" "}
                   <span className="text-primary">Developer</span> &#123;
@@ -160,12 +160,19 @@ const Index = () => {
                 </code>
                 <code className="block opacity-0 animate-[fadeInUp_0.6s_ease-out_1.7s_both]">
                   &nbsp;&nbsp;<span className="text-secondary">String[]</span> skills = &#123;
-                  <span className="text-green-500">"Java"</span>,
-                  <span className="text-green-500">"Reactjs"</span>,{" "}
-                  <span className="text-green-500">"MySQL"</span>,{" "}
-                  <span className="text-green-500">"HTML"</span>,{" "}
+                </code>
+                <code className="block opacity-0 animate-[fadeInUp_0.6s_ease-out_1.8s_both]">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-500">"Java"</span>,{" "}
+                  <span className="text-green-500">"ReactJS"</span>,{" "}
+                  <span className="text-green-500">"MySQL"</span>,
+                </code>
+                <code className="block opacity-0 animate-[fadeInUp_0.6s_ease-out_1.9s_both]">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-500">"HTML"</span>,{" "}
                   <span className="text-green-500">"CSS"</span>,{" "}
-                  <span className="text-green-500">"Springboot"</span>&#125;;
+                  <span className="text-green-500">"Spring Boot"</span>
+                </code>
+                <code className="block opacity-0 animate-[fadeInUp_0.6s_ease-out_2.0s_both]">
+                  &nbsp;&nbsp;&#125;;
                 </code>
                 <code className="block opacity-0 animate-[fadeInUp_0.6s_ease-out_1.9s_both]">
                   &nbsp;&nbsp;<span className="text-secondary">String</span> passion ={" "}
