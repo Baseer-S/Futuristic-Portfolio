@@ -89,8 +89,8 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
+      
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
-        {/* Floating Elements */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[20%] left-[10%] text-4xl opacity-30 animate-[float_6s_ease-in-out_infinite]">
             ⚡
@@ -140,9 +140,17 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Code Window */}
           <div className="animate-[slideInRight_1s_ease-out]">
-            <div className="bg-card/80 backdrop-blur-md border border-border/20 rounded-xl p-6 shadow-2xl transition-transform hover:rotate-0 hover:scale-105 duration-300" style={{ transform: "perspective(1000px) rotateY(-5deg) rotateX(5deg)" }}>
+            <div
+              ref={cardRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              className="bg-card/80 backdrop-blur-md border border-border/20 rounded-xl p-6 shadow-2xl transition-transform hover:scale-105 duration-300 cursor-pointer"
+              style={{
+                transform: `perspective(1000px) rotateY(${rotation.y}deg) rotateX(${rotation.x}deg)`,
+                transition: 'transform 0.1s ease-out'
+              }}
+            >
               <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border/10">
                 <div className="w-3 h-3 rounded-full bg-red-500" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
