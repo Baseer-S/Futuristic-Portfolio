@@ -3,6 +3,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import avatarImg from "@/assets/baseer-avatar.jpg";
+import aiResearchImg from "@/assets/ai-research-assistant.png";
+import portfolioImg from "@/assets/portfolio-screenshot.png";
+import aiAssistantImg from "@/assets/ai-assistant.png";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,11 +64,6 @@ const Index = () => {
     setRotation({ x: 0, y: 0 });
   };
 
-
-  const avatarImg = "https://raw.githubusercontent.com/Baseer-S/Futuristic-Portfolio/main/src/assets/baseer-avatar.jpg";
-  const aiResearchImg = "https://raw.githubusercontent.com/Baseer-S/Futuristic-Portfolio/main/src/assets/ai-research-assistant.png";
-  const portfolioImg = "https://raw.githubusercontent.com/Baseer-S/Futuristic-Portfolio/main/src/assets/portfolio-screenshot.png";
-  const aiAssistantImg = "https://raw.githubusercontent.com/Baseer-S/Futuristic-Portfolio/main/src/assets/ai-assistant.png";
   
   return (
     <div className="min-h-screen bg-background text-foreground">
