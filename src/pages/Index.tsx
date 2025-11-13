@@ -191,6 +191,7 @@ const Index = () => {
                 <code className="block opacity-0 animate-[fadeInUp_0.6s_ease-out_1.8s_both]">
                   &nbsp;&nbsp;&nbsp;&nbsp;<span className="text-green-500">"Java"</span>,{" "}
                   <span className="text-green-500">"ReactJS"</span>,{" "}
+                  <span className="text-green-500">"JavaScript"</span>,{" "}
                   <span className="text-green-500">"MySQL"</span>,
                 </code>
                 <code className="block opacity-0 animate-[fadeInUp_0.6s_ease-out_1.9s_both]">
@@ -240,8 +241,9 @@ const Index = () => {
               I'm <strong className="text-foreground">Baseer S</strong>, a{" "}
               <strong className="text-foreground">BCA student</strong> and backend developer
               specializing in <strong className="text-foreground">Java</strong>,{" "}
-              <strong className="text-foreground">Spring Boot</strong>,
-              <strong className="text-foreground">Reactjs</strong> and{" "}
+              <strong className="text-foreground">Spring Boot</strong>,{" "}
+              <strong className="text-foreground">Reactjs</strong>,{" "}
+                <strong className="text-foreground">JavaScript</strong> and{" "}
               <strong className="text-foreground">RESTful APIs</strong>. My focus is on building
               high-performance, secure, and scalable backend systems that solve real-world challenges.
             </p>
