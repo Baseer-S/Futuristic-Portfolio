@@ -48,8 +48,8 @@ npm install
 
 # Start development server
 npm run dev
-
-📬 Contact
+```
+# 📬 Contact
 
 If you'd like to collaborate or hire me:
 
@@ -57,6 +57,7 @@ If you'd like to collaborate or hire me:
 🔗 LinkedIn: https://linkedin.com/in/baseer-s
 💻 GitHub: https://github.com/Baseer-S
 
-screenshot
-Futuristic-Portfolio/src/assets/voiceofbb_store.png
+# screenshot
+<img width="1856" height="913" alt="Screenshot 2025-11-22 at 11-34-17 Voice of BB - Premium Tech Deals   Discounts" src="https://github.com/user-attachments/assets/d1ed1bb1-450b-4ae2-9c22-7f476ac42f0b" />
+
 
