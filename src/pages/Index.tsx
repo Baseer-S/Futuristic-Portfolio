@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import * as Icons from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,6 +8,8 @@ import avatarImg from "@/assets/baseer-avatar.jpg";
 import aiResearchImg from "@/assets/ai-research-assistant.png";
 import portfolioImg from "@/assets/portfolio-screenshot.png";
 import aiAssistantImg from "@/assets/ai-assistant.png";
+import voiceofbbstoreImg from "@/assets/voiceofbb_store.png";
+import ContactForm from "@/components/ui/ContactForm";
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,18 +48,18 @@ const Index = () => {
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
-    
+
     const card = cardRef.current;
     const rect = card.getBoundingClientRect();
     const cardCenterX = rect.left + rect.width / 2;
     const cardCenterY = rect.top + rect.height / 2;
-    
+
     const mouseX = e.clientX - cardCenterX;
     const mouseY = e.clientY - cardCenterY;
-    
+
     const rotateY = (mouseX / (rect.width / 2)) * 10;
     const rotateX = -(mouseY / (rect.height / 2)) * 10;
-    
+
     setRotation({ x: rotateX, y: rotateY });
   };
 
@@ -64,17 +67,16 @@ const Index = () => {
     setRotation({ x: 0, y: 0 });
   };
 
-  
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div id="particles" className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" />
 
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          isScrolled
-            ? "bg-background/85 backdrop-blur-3xl border-b border-border/10 shadow-2xl"
-            : "bg-background/75 backdrop-blur-xl border-b border-border/5"
-        }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+          ? "bg-background/85 backdrop-blur-3xl border-b border-border/10 shadow-2xl"
+          : "bg-background/75 backdrop-blur-xl border-b border-border/5"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-10 py-3">
           <div className="flex justify-between items-center">
@@ -243,7 +245,7 @@ const Index = () => {
               specializing in <strong className="text-foreground">Java</strong>,{" "}
               <strong className="text-foreground">Spring Boot</strong>,{" "}
               <strong className="text-foreground">Reactjs</strong>,{" "}
-                <strong className="text-foreground">JavaScript</strong> and{" "}
+              <strong className="text-foreground">JavaScript</strong> and{" "}
               <strong className="text-foreground">RESTful APIs</strong>. My focus is on building
               high-performance, secure, and scalable backend systems that solve real-world challenges.
             </p>
@@ -278,28 +280,28 @@ const Index = () => {
               {
                 title: "Frontend",
                 skills: [
-                  { icon: "🌐", name: "HTML" },
-                  { icon: "💨", name: "Tailwind CSS" },
-                  { icon: "⚡", name: "JavaScript" },
-                  { icon: "⚛️", name: "React.js" },
+                  { icon: Icons.Globe, name: "HTML" },
+                  { icon: Icons.Wind, name: "Tailwind CSS" },
+                  { icon: Icons.Bolt, name: "JavaScript" },
+                  { icon: Icons.Atom, name: "React.js" },
                 ],
               },
               {
                 title: "Backend",
                 skills: [
-                  { icon: "☕", name: "Java" },
-                  { icon: "🐍", name: "Python" },
-                  { icon: "🗄️", name: "MySQL" },
-                  { icon: "📚", name: "Data Structures & Algorithms" },
+                  { icon: Icons.Coffee, name: "Java" },
+                  { icon: Icons.Code, name: "Python" },
+                  { icon: Icons.Database, name: "MySQL" },
+                  { icon: Icons.Layers, name: "Data Structures & Algorithms" },
                 ],
               },
               {
                 title: "Tools & Others",
                 skills: [
-                  { icon: "🐙", name: "Git/GitHub" },
-                  { icon: "🧠", name: "IntelliJ IDEA" },
-                  { icon: "🐳", name: "Docker" },
-                  { icon: "📬", name: "Postman" },
+                  { icon: Icons.GithubIcon, name: "Git / GitHub" },   // works on your version
+                  { icon: Icons.Cog, name: "IntelliJ IDEA" },
+                  { icon: Icons.Dock, name: "Docker" },               // your version has Dock (not Docker)
+                  { icon: Icons.Mail, name: "Postman" },
                 ],
               },
             ].map((category) => (
@@ -309,15 +311,18 @@ const Index = () => {
               >
                 <h3 className="text-xl font-semibold text-primary mb-6">{category.title}</h3>
                 <div className="space-y-4">
-                  {category.skills.map((skill) => (
-                    <div
-                      key={skill.name}
-                      className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg transition-all hover:bg-primary/20 hover:translate-x-1"
-                    >
-                      <span className="text-2xl">{skill.icon}</span>
-                      <span>{skill.name}</span>
-                    </div>
-                  ))}
+                  {category.skills.map((skill) => {
+                    const Icon = skill.icon;
+                    return (
+                      <div
+                        key={skill.name}
+                        className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg transition-all hover:bg-primary/20 hover:translate-x-1"
+                      >
+                      <Icon className="w-6 h-6 text-blue-300 opacity-90 drop-shadow-sm" />
+                        <span>{skill.name}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
@@ -345,8 +350,15 @@ const Index = () => {
                 image: aiResearchImg,
                 tech: ["Java", "Spring Boot", "Gemini API", "HTML", "CSS", "JavaScript", "RESTful APIs"],
                 github: "https://github.com/Baseer-S/research-assistant",
-              },
-              {
+              }, {
+                title: "Voice of BB Store",
+                description:
+                  "A high-performance ecommerce storefront built with React + TypeScript, styled using Tailwind CSS. Includes dynamic components, smooth animations, and pixel-perfect responsiveness with Vite for lightning-fast development and build optimization.",
+                image: voiceofbbstoreImg,
+                tech: ["ReactJS", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Vite"],
+                live: "https://voiceofbbstore.netlify.app/",
+                github: "https://github.com/Baseer-S/voice-affiliate-plus",
+              }, {
                 title: "Personal Futuristic Portfolio",
                 description:
                   "Visually dynamic personal portfolio website with a modern UI, responsive layout, and custom animations. Built with HTML, CSS, and JavaScript.",
@@ -417,100 +429,9 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      <section id="contact" className="py-24 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text text-transparent">
-              Let's Work Together
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Ready to bring your ideas to life? Let's connect and create something amazing.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-16">
-            <div className="space-y-6">
-              {[
-                {
-                  icon: "📧",
-                  title: "Email",
-                  value: "baseerofficial0@gmail.com",
-                  link: "mailto:baseerofficial0@gmail.com",
-                  linkText: "Send Email",
-                },
-                {
-                  icon: "💼",
-                  title: "LinkedIn",
-                  value: "Connect with me professionally",
-                  link: "https://www.linkedin.com/in/baseer-s-419713285/",
-                  linkText: "View Profile",
-                },
-                {
-                  icon: "🐙",
-                  title: "GitHub",
-                  value: "Check out my code repositories",
-                  link: "https://github.com/Baseer-S",
-                  linkText: "View Projects",
-                },
-              ].map((contact) => (
-                <div
-                  key={contact.title}
-                  className="bg-card/60 backdrop-blur-md border border-border/20 rounded-xl p-6 text-center transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20"
-                >
-                  <div className="text-4xl mb-4">{contact.icon}</div>
-                  <h3 className="text-lg font-semibold mb-2">{contact.title}</h3>
-                  <p className="text-muted-foreground mb-4">{contact.value}</p>
-                  <a
-                    href={contact.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary font-medium hover:text-primary/80 transition-colors"
-                  >
-                    {contact.linkText}
-                  </a>
-                </div>
-              ))}
-            </div>
-            <div className="bg-card/60 backdrop-blur-md border border-border/20 rounded-xl p-8">
-              <form className="space-y-6">
-                <div className="space-y-2">
-                  <Label htmlFor="name">Name</Label>
-                  <Input id="name" required className="bg-background/80 border-border/20" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    required
-                    className="bg-background/80 border-border/20"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" required className="bg-background/80 border-border/20" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    rows={5}
-                    required
-                    className="bg-background/80 border-border/20"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-primary to-secondary hover:shadow-xl hover:shadow-primary/40 hover:-translate-y-0.5 transition-all"
-                >
-                  <span>Send Message</span>
-                  <span className="ml-2">🚀</span>
-                </Button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+      
+     {/* Contact form */}
+     <ContactForm/>
 
       <footer className="bg-background/90 border-t border-border/10 py-12">
         <div className="max-w-7xl mx-auto px-8">
