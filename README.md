@@ -58,5 +58,6 @@ If you'd like to collaborate or hire me:
 💻 GitHub: https://github.com/Baseer-S
 
 screenshot
-Futuristic-Portfolio/src/assets/voiceofbb_store.png
+
+<img width="1856" height="913" alt="Screenshot 2025-11-22 at 13-49-16 Baseer&#39;s Portfolio" src="https://github.com/user-attachments/assets/4d40e303-6ca9-461f-b529-002b2fe6874b" />
 
