@@ -57,11 +57,7 @@ If you'd like to collaborate or hire me:
 🔗 LinkedIn: https://linkedin.com/in/baseer-s
 💻 GitHub: https://github.com/Baseer-S
 
-<<<<<<< HEAD
-screenshot
-=======
 # screenshot
->>>>>>> 2cb5f04b010c613df11deb04c6b58b57fa541040
 
 <img width="1856" height="913" alt="Screenshot 2025-11-22 at 13-49-16 Baseer&#39;s Portfolio" src="https://github.com/user-attachments/assets/4d40e303-6ca9-461f-b529-002b2fe6874b" />
 
