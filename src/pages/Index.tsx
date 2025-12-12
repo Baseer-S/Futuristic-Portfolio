@@ -116,10 +116,10 @@ const Index = () => {
           <div className="absolute top-[20%] left-[10%] text-4xl opacity-30 animate-[float_6s_ease-in-out_infinite]">
             <Icons.Zap className="w-8 h-10 text-yellow-400" />
           </div>
-          <div className="absolute top-[55%] right-[10%] text-4xl opacity-30 animate-[rocketFly_4s_ease-in-out_infinite]">
+          <div className="absolute top-[50%] right-[50%] text-4xl opacity-40 animate-[rocketFly_4s_ease-in-out_infinite]">
             <Icons.Rocket className="w-10 h-10 text-purple-400" />
           </div>
-          <div className="absolute bottom-[40%] left-[15%] text-4xl opacity-30 animate-[float_6s_ease-in-out_infinite_4s]">
+          <div className="absolute bottom-[45%] left-[30%] text-4xl opacity-30 animate-[float_6s_ease-in-out_infinite_4s]">
             <Icons.Laptop className="w-10 h-10 text-green-400" />
           </div>
         </div>
