@@ -114,15 +114,29 @@ const Index = () => {
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[20%] left-[10%] text-4xl opacity-30 animate-[float_6s_ease-in-out_infinite]">
-            ⚡
+            <Icons.Zap className="w-10 h-10 text-yellow-400" />
           </div>
-          <div className="absolute top-[55%] right-[10%] text-4xl opacity-30 animate-[float_6s_ease-in-out_infinite_1.5s]">
-            🚀
+          <div className="absolute top-[55%] right-[10%] text-4xl opacity-30 animate-[rocketFly_4s_ease-in-out_infinite]">
+            <Icons.Rocket className="w-10 h-10 text-purple-400" />
           </div>
           <div className="absolute bottom-[40%] left-[30%] text-4xl opacity-30 animate-[float_6s_ease-in-out_infinite_4s]">
-            💻
+            <Icons.Laptop className="w-10 h-10 text-green-400" />
           </div>
         </div>
+
+        <style>{`
+  @keyframes rocketFly {
+    0% {
+      transform: translateY(0) rotate(10 deg);
+    }
+    50% {
+      transform: translateY(-100px) rotate(-15deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+`}</style>
 
         <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center">
           <div className="space-y-6 animate-[slideInLeft_1s_ease-out]">
@@ -298,9 +312,9 @@ const Index = () => {
               {
                 title: "Tools & Others",
                 skills: [
-                  { icon: Icons.GithubIcon, name: "Git / GitHub" },   // works on your version
+                  { icon: Icons.GithubIcon, name: "Git / GitHub" },
                   { icon: Icons.Cog, name: "IntelliJ IDEA" },
-                  { icon: Icons.Dock, name: "Docker" },               // your version has Dock (not Docker)
+                  { icon: Icons.Dock, name: "Docker" },
                   { icon: Icons.Mail, name: "Postman" },
                 ],
               },
@@ -318,7 +332,7 @@ const Index = () => {
                         key={skill.name}
                         className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg transition-all hover:bg-primary/20 hover:translate-x-1"
                       >
-                      <Icon className="w-6 h-6 text-blue-300 opacity-90 drop-shadow-sm" />
+                        <Icon className="w-6 h-6 text-blue-300 opacity-90 drop-shadow-sm" />
                         <span>{skill.name}</span>
                       </div>
                     );
@@ -429,9 +443,9 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
-     {/* Contact form */}
-     <ContactForm/>
+
+      {/* Contact form */}
+      <ContactForm />
 
       <footer className="bg-background/90 border-t border-border/10 py-12">
         <div className="max-w-7xl mx-auto px-8">
@@ -454,7 +468,7 @@ const Index = () => {
                   <li key={item}>
                     <a
                       href={`#${item.toLowerCase()}`}
-                      className="text-muted-foreground hover:text-primary transition-colors"
+                      className="text-muted-foreground hover:text-primary hover:scale-110 inline-block transition-all duration-200"
                     >
                       {item}
                     </a>
@@ -470,7 +484,7 @@ const Index = () => {
                     href="https://www.linkedin.com/in/baseer-s-419713285/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary hover:scale-110 inline-block transition-all duration-200"
                   >
                     LinkedIn
                   </a>
@@ -480,7 +494,7 @@ const Index = () => {
                     href="https://github.com/Baseer-S"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary hover:scale-110 inline-block transition-all duration-200"
                   >
                     GitHub
                   </a>
@@ -488,7 +502,7 @@ const Index = () => {
                 <li>
                   <a
                     href="mailto:baseerofficial0@gmail.com"
-                    className="text-muted-foreground hover:text-primary transition-colors"
+                    className="text-muted-foreground hover:text-primary hover:scale-110 inline-block transition-all duration-200"
                   >
                     Email
                   </a>

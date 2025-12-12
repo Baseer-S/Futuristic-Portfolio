@@ -1,5 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import * as Icons from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -26,9 +27,9 @@ const ContactForm = () => {
 
     try {
 
-      const serviceId = "service_yzy7cjo";     
-      const templateId = "template_xhtbm34";    
-      const publicKey = "u4KAgRvntXn3il8iG";      
+      const serviceId = "service_yzy7cjo";
+      const templateId = "template_xhtbm34";
+      const publicKey = "u4KAgRvntXn3il8iG";
 
       // Get current date and time
       const now = new Date();
@@ -84,44 +85,49 @@ const ContactForm = () => {
           <div className="space-y-6">
             {[
               {
-                icon: "📧",
+                icon: Icons.Mail,
                 title: "Email",
                 value: "baseerofficial0@gmail.com",
                 link: "mailto:baseerofficial0@gmail.com",
                 linkText: "Send Email",
               },
               {
-                icon: "💼",
+                icon: Icons.Linkedin,
                 title: "LinkedIn",
                 value: "Connect with me professionally",
                 link: "https://www.linkedin.com/in/baseer-s-419713285/",
                 linkText: "View Profile",
               },
               {
-                icon: "🐙",
+                icon: Icons.Github,
                 title: "GitHub",
                 value: "Check out my code repositories",
                 link: "https://github.com/Baseer-S",
                 linkText: "View Projects",
               },
-            ].map((contact) => (
-              <div
-                key={contact.title}
-                className="bg-slate-800/60 backdrop-blur-md border border-slate-700/50 rounded-xl p-6 text-center transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20"
-              >
-                <div className="text-4xl mb-4">{contact.icon}</div>
-                <h3 className="text-lg font-semibold mb-2 text-white">{contact.title}</h3>
-                <p className="text-slate-400 mb-4">{contact.value}</p>
-                <a
-                  href={contact.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-400 font-medium hover:text-blue-300 transition-colors"
+            ].map((contact) => {
+              const IconComponent = contact.icon;
+              return (
+                <div
+                  key={contact.title}
+                  className="bg-slate-800/60 backdrop-blur-md border border-slate-700/50 rounded-xl p-6 text-center transition-all hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20"
                 >
-                  {contact.linkText}
-                </a>
-              </div>
-            ))}
+                  <div className="flex justify-center mb-4">
+                    <IconComponent className="w-10 h-10 text-blue-400" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">{contact.title}</h3>
+                  <p className="text-slate-400 mb-4">{contact.value}</p>
+                <a
+                    href={contact.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 font-medium hover:text-blue-300 transition-colors"
+                    >
+                    {contact.linkText}
+                  </a>
+                </div>
+              );
+            })}
           </div>
 
           {/* Contact Form */}
@@ -183,11 +189,10 @@ const ContactForm = () => {
 
               {formStatus.message && (
                 <div
-                  className={`p-4 rounded-lg text-center font-medium ${
-                    formStatus.type === "success"
+                  className={`p-4 rounded-lg text-center font-medium ${formStatus.type === "success"
                       ? "bg-green-500/10 text-green-400 border border-green-500/20"
                       : "bg-red-500/10 text-red-400 border border-red-500/20"
-                  }`}
+                    }`}
                 >
                   {formStatus.message}
                 </div>
