@@ -498,7 +498,7 @@ const Index = () => {
           </div>
           <div className="text-center pt-8 border-t border-border/10">
             <p className="text-muted-foreground">
-              © 2025-2027 Baseer S. All rights reserved. Designed with 🎨, coded with 💻, and powered by
+              © {new Date().getFullYear()} Baseer S. All rights reserved. Designed with 🎨, coded with 💻, and powered by
               ☕.
             </p>
           </div>
