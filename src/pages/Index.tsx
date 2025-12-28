@@ -113,7 +113,8 @@ const Index = () => {
 
       <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-[15%] left-[10%] text-4xl opacity-30 animate-[float_6s_ease-in-out_infinite]">
+          <div className="absolute top-[15%] npm start
+left-[10%] text-4xl opacity-30 animate-[float_6s_ease-in-out_infinite]">
             <Icons.Zap className="w-8 h-10 text-yellow-400" />
           </div>
           <div className="absolute top-[50%] right-[50%] text-4xl opacity-40 animate-[rocketFly_4s_ease-in-out_infinite]">
